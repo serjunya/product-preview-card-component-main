@@ -1,65 +1,91 @@
 body {
     background-color: #f3eae3;
-    width: 1440px;
+    margin: 20vh 28vw;
 }
-#card {
-    height: 450px;
-    width: 600px;
-    margin: 10% 0 0 30%;
+.card {
+    height: 60vh;
+    width: 44vw;
 }
-#card img {
+.picture {
     float: left;
+    height: inherit;
+    width: 50%;
+    overflow: hidden;
+}
+.parfum_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px 0 0 10px;
 }
-#information {
-    display: flex;
-    flex-direction: column;
-    height: 450px;
-    width: 300px;
+.parfum_mobile {
+    display: none;
+}
+.information {
+    height: inherit;
+    width: 50%;
     background-color: #ffffff;
     float: left;
     border-radius: 0 10px 10px 0;
 }
-.info {
-    margin: 23px 0 0 35px;
+.flex-container {
+    height: 52vh;
+    max-width: 1050px;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 10%;
+}
+
+.info:not(:last-child):not(:first-child) {
+    margin-bottom: 8%;
 }
 .perfume {
-    font-size: small;
+    flex: 0.9;
+    font-size: 1.5vmin;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.5em;
-    margin-top: 35px;
+    margin-bottom: 5%;
+    letter-spacing: 0.5vw;
+    flex-shrink: 1;
 }
 .full_title {
-    font-size: 2em;
+    flex: 2;
+    font-size: 4.4vmin;
     font-weight: 600;
     line-height: 105%;
     font-family: 'Fraunces', bold serif;
 }
 .description {
-    font-size: small;
+    flex: 2;
+    font-size: 1.8vmin;
     line-height: 1.6em;
     font-family: 'Montserrat', sans-serif;
+    flex-shrink: 3;
 }
 .prices {
+    flex: 2;
     display: flex;
     align-items: center;
     flex-direction: row;
+    flex-shrink: 3;
 }
 .discount_price {
-    font-size: 2em;
+    font-size: 4.1vmin;
     color: #3D8168;
     font-weight: 600;
     font-family: 'Fraunces', bold serif;
+    margin-right: 10%;
+    flex-shrink: 2;
 }
 .old_price {
-    font-size: small;
+    font-size: 1.8vmin;
     font-family: 'Montserrat', sans-serif;
     text-decoration: grey line-through;
-    margin-left: 20px;
+    flex-shrink: 3;
 }
 .add {
-    height: 50px;
-    width: 230px;
+    flex: 2;
+    height: 2vmin;
+    width: 100%;
     justify-content: center;
     background-color: #3D8168;
     border: none;
@@ -76,4 +102,109 @@ body {
 .add:active {
     background-color: #1B3F31;
     cursor: pointer;
+}
+@media screen and (min-width: 480px) and (max-width: 1050px) {
+    .flex-container {
+        max-width: 480px;
+        padding: 12% 12%;
+    }
+    .info:not(:last-child):not(:first-child) {
+        margin-bottom: 12%;
+    }
+    .perfume {
+        margin-bottom: 6%;
+    }
+    .full_title {
+        font-size: 2.9vmax;
+    }
+    .description {
+        font-size: 1vmax;
+    }
+    .prices {
+        flex-direction: column;
+        align-items: normal;
+    }
+    .discount_price {
+        margin-bottom: 5%;
+    }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+    .flex-container {
+        max-width: 376px;
+    }
+    .full_title {
+        font-size: 2.4vmax;
+    }
+    .prices {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+@media screen and (max-width: 376px) {
+    .flex-container {
+        max-width: 240px;
+        padding: 8%;
+        height: 40vh;
+    }
+    body {
+        margin: 10vh 10vw;
+    }
+    .picture {
+        float: top;
+        height: 35vh;
+        width: 80vw;
+    }
+    .parfum_pic {
+        display: none;
+    }
+    .parfum_mobile {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+    .information {
+        height: 45vh;
+        width: 80vw;
+        border-radius: 0 0 10px 10px;
+        float: top;
+    }
+    .info:not(:last-child):not(:first-child) {
+        margin-bottom: 4%;
+    }
+    .perfume {
+        font-size: 2.7vmin;
+        letter-spacing: 1.5vw;
+        margin-bottom: 2%;
+    }
+    .full_title {
+        font-size: 4vmax;
+    }
+    .description {
+        font-size: 1.84vmax;
+    }
+    .discount_price {
+        font-size: 7vmin;
+    }
+    .old_price {
+        font-size: 3vmin;
+    }
+    .add {
+        margin-bottom: 4vmin;
+    }
+}
+@media screen and (max-width: 240px) {
+    .full_title {
+        font-size: 10vw;
+    }
+    .description {
+        font-size: 1vh;
+    }
+    .discount_price {
+        font-size: 10vw;
+    }
+    .old_price {
+        font-size: 5vw;
+    }
 }
